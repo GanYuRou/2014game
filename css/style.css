@@ -1,0 +1,277 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    color: #fff;
+}
+
+body {
+    background-image:  linear-gradient(rgba(236, 242, 243, 0.4), rgba(187, 206, 211, 0.4)), url(../img/back.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* logo标志 */
+.header {
+    width: 20rem;
+    height: 15rem;
+    padding: 1rem;
+    margin: 2rem 0 0 2rem;
+    color: #000;
+}
+
+.title>strong {
+    display: table;
+    font-size: 6rem;
+    margin: 0 auto; 
+}
+
+.sign>span {
+    display: table;
+    font-size: 1.5rem;
+    margin: 0 auto;
+}
+
+/* 得分显示 */
+.displayScore {
+    position: absolute;
+    right: 1.5rem;
+    top: 6.5rem;
+}
+
+.displayScore::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.score, .best {
+    width: 10rem;
+    height: 7rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    float: left;
+    margin: 1rem;
+    background-color: #f63;
+}
+
+.description {
+    display: table;
+    margin: 0 auto;
+    margin-bottom: .7rem;
+}
+
+.description ~ span {
+    font-size: 1.8rem;
+    display: table;
+    margin: 0 auto;
+}
+
+/* 新游戏按钮 */
+.new-game {
+    display: inline-block;
+    margin: 30% 0 0 1rem;
+    
+}
+.more-difficult {
+    display: inline-block;
+    margin-left: 2rem;
+}
+
+button, button:link, button:visited {
+    width: 11rem;
+    height: 5.5rem;
+    cursor: pointer;
+    font-size: 2rem;
+    background: #ff0022;
+    color: #fff;;
+    border: 0;
+    outline: 0;
+    transition: all .2s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.gamePanel {
+    /* 居中显示 */
+    width: 100rem;
+    height: 60rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: rgb(255, 255, 255, 0.6);
+    transform: translate(-50%, -50%);
+}
+/* 提示框 */
+.gamePanel>p {
+    background: #ff0022;
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    width: 20rem;
+    padding: 1rem;
+    position: absolute;
+    left: 2rem;
+    bottom: 20rem;
+    box-shadow: 2px 2px 6px rgb(255, 255, 255, 0.6) ;
+}
+.gamePanel>p::after {
+    display: block;
+    content: "";
+    border: 1rem solid transparent;
+    border-left-color: #ff0022;
+    position: absolute;
+    left: 20rem;
+    bottom: 3rem;
+}
+
+.gameTable {
+    width: 45rem;
+    height: 45rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(121, 120, 120, 0.7);
+}
+
+.table-4>.grid {
+    position: relative;
+    width: 9rem;
+    height: 9rem;
+    margin: 1.7rem 0 0 1.8rem;
+    border-radius: 1rem;
+    float: left;
+    background-color: #b0c4bb;
+}
+.table-6 {
+    display: none;
+}
+.table-6>.grid {
+    position: relative;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 1rem;
+    float: left;
+    margin: 1.3rem 0 0 1.3rem;
+    background-color: #b0c4bb;
+}
+
+/* 格子移动动画 */
+@keyframes newgrid4{
+    from {
+        width: 5rem;
+        height: 5rem;
+        top: 24px;
+        left: 24px;
+        line-height: 24px;
+    }  
+}
+@keyframes newgrid6{
+    from {
+        width: 1.5rem;
+        height: 1.5rem;
+        top: 24px;
+        left: 24px;
+        line-height: 24px;
+    }  
+}
+
+.cell-4 {
+    width: 9rem;
+    height: 9rem;
+    line-height: 9rem;
+    border-radius: 1rem;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-size: 4.5rem;
+    font-weight: bold;
+}
+
+.cell-6 {
+    width: 6rem;
+    height: 6rem;
+    top: 0;
+    left: 0;
+    line-height: 6rem;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-size: 3rem;
+    font-weight: bold;
+    border-radius: 1rem;
+}
+.ani4 {
+    animation: newgrid4 .1s ease-in forwards;
+}
+.ani6 {
+    animation: newgrid6 .1s ease-in forwards;
+}
+
+.overpage {
+    display: none;
+    position: absolute;
+    background: linear-gradient(90deg,#ffb833e3, rgba(253, 166, 122, 0.931));
+    color: #fff;
+    width: 100rem;
+    height: 60rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    text-align: center;
+    z-index: 1;
+}
+
+.overpage p {
+    margin: 6rem;
+    padding: .5rem;
+    height: 5rem;
+}
+
+.overpage>p:first-child {
+    margin-top: 10rem;
+    font-size: 5rem;
+}
+
+.overpage .again, .overpage .again:link, .overpage .again:visited {
+    background-color: rgba(255, 0, 34, 0.8);
+    color: #fff;
+    width: 18rem;
+    height: 5rem;
+    text-align: center;
+    line-height: 3.5rem;
+    cursor: pointer;
+    font-size: 2rem;
+    border-radius: 3rem;
+    margin: auto; 
+    transition: all .2s; 
+}
+
+.overpage .again:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.overpage .again:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}

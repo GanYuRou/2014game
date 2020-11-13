@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>2048</title>
+</head>
+
+<body>
+    <div class="gamePanel">
+        <div class="header">
+            <div class="title">
+                <strong>2048</strong>
+            </div>
+            <div class="sign">
+                <span>Play 2048 Game Online!</span>
+            </div>
+        </div>
+
+        <div class="displayScore">
+            <div class="score">
+                <span class="description">
+                    <strong>得分</strong>
+                </span>
+                <span class="digit">0</span>
+            </div>
+
+            <div class="best">
+                <span class="description">
+                    <strong>最高分</strong>
+                </span>
+                <span class="max-digit">0</span>
+            </div>
+        </div>
+
+        <div class="more-difficult">
+            <button>难度增加</button>
+        </div>
+
+        <div class="new-game">
+            <button>新游戏</button>
+        </div>
+
+        <p>
+            温馨提示：仅能通过上下左右键控制移动；难度增加是变成6*6格式
+        </p>
+
+        <div class="gameTable table-4">
+            <div class="grid grid4-00">
+                <div></div>
+            </div>
+            <div class="grid grid4-01">
+                <div></div>
+            </div>
+            <div class="grid grid4-02">
+                <div></div>
+            </div>
+            <div class="grid grid4-03">
+                <div></div>
+            </div>
+            <div class="grid grid4-10">
+                <div></div>
+            </div>
+            <div class="grid grid4-11">
+                <div></div>
+            </div>
+            <div class="grid grid4-12">
+                <div></div>
+            </div>
+            <div class="grid grid4-13">
+                <div></div>
+            </div>
+            <div class="grid grid4-20">
+                <div></div>
+            </div>
+            <div class="grid grid4-21">
+                <div></div>
+            </div>
+            <div class="grid grid4-22">
+                <div></div>
+            </div>
+            <div class="grid grid4-23">
+                <div></div>
+            </div>
+            <div class="grid grid4-30">
+                <div></div>
+            </div>
+            <div class="grid grid4-31">
+                <div></div>
+            </div>
+            <div class="grid grid4-32">
+                <div></div>
+            </div>
+            <div class="grid grid4-33">
+                <div></div>
+            </div>
+        </div>
+
+        <div class="gameTable table-6">
+            <div class="grid grid6-00">
+                <div></div>
+            </div>
+            <div class="grid grid6-01">
+                <div></div>
+            </div>
+            <div class="grid grid6-02">
+                <div></div>
+            </div>
+            <div class="grid grid6-03">
+                <div></div>
+            </div>
+            <div class="grid grid6-04">
+                <div></div>
+            </div>
+            <div class="grid grid6-05">
+                <div></div>
+            </div>
+            <div class="grid grid6-10">
+                <div></div>
+            </div>
+            <div class="grid grid6-11">
+                <div></div>
+            </div>
+            <div class="grid grid6-12">
+                <div></div>
+            </div>
+            <div class="grid grid6-13">
+                <div></div>
+            </div>
+            <div class="grid grid6-14">
+                <div></div>
+            </div>
+            <div class="grid grid6-15">
+                <div></div>
+            </div>
+            <div class="grid grid6-20">
+                <div></div>
+            </div>
+            <div class="grid grid6-21">
+                <div></div>
+            </div>
+            <div class="grid grid6-22">
+                <div></div>
+            </div>
+            <div class="grid grid6-23">
+                <div></div>
+            </div>
+            <div class="grid grid6-24">
+                <div></div>
+            </div>
+            <div class="grid grid6-25">
+                <div></div>
+            </div>
+            <div class="grid grid6-30">
+                <div></div>
+            </div>
+            <div class="grid grid6-31">
+                <div></div>
+            </div>
+            <div class="grid grid6-32">
+                <div></div>
+            </div>
+            <div class="grid grid6-33">
+                <div></div>
+            </div>
+            <div class="grid grid6-34">
+                <div></div>
+            </div>
+            <div class="grid grid6-35">
+                <div></div>
+            </div>
+            <div class="grid grid6-40">
+                <div></div>
+            </div>
+            <div class="grid grid6-41">
+                <div></div>
+            </div>
+            <div class="grid grid6-42">
+                <div></div>
+            </div>
+            <div class="grid grid6-43">
+                <div></div>
+            </div>
+            <div class="grid grid6-44">
+                <div></div>
+            </div>
+            <div class="grid grid6-45">
+                <div></div>
+            </div>
+            <div class="grid grid6-50">
+                <div></div>
+            </div>
+            <div class="grid grid6-51">
+                <div></div>
+            </div>
+            <div class="grid grid6-52">
+                <div></div>
+            </div>
+            <div class="grid grid6-53">
+                <div></div>
+            </div>
+            <div class="grid grid6-54">
+                <div></div>
+            </div>
+            <div class="grid grid6-55">
+                <div></div>
+            </div>
+        </div>
+
+        <div class="overpage">
+            <p>游戏结束啦！</p>
+            <p>得分：<span></span></p>
+            <p>最高分：<span></span></p>
+            <p class="again">再来一局</p>
+        </div>
+    </div>
+
+    <script src="js/2048.js"></script>
+</body>
+
+</html>
